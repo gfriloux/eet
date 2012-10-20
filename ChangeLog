@@ -632,3 +632,6 @@
 
         * Fix big endian bug with eet image handling and endianess swapping.
 
+2012-10-20  Cedric Bail
+
+	1.7.1 release

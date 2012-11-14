@@ -635,3 +635,7 @@
 2012-10-20  Cedric Bail
 
 	1.7.1 release
+
+2012-11-14  Michal Jagiello
+
+	*  Add missing UNLOCK_CACHE in eet_open function.

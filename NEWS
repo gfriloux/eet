@@ -1,4 +1,8 @@
-Eet 1.7.1
+Changes since Eet 1.7.1:
+--------------------------
+
+Fixes:
+    * Add missing UNLOCK_CACHE in eet_open function
 
 Changes since Eet 1.7.0:
 --------------------------

@@ -1,4 +1,10 @@
-Eet 1.7.2
+Eet 1.7.3
+
+Changes since Eet 1.7.2:
+--------------------------
+
+Fixes:
+    * Updated lz4 code.
 
 Changes since Eet 1.7.1:
 --------------------------

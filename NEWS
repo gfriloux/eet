@@ -1,3 +1,11 @@
+Eet 1.7.4
+
+Changes since Eet 1.7.3:
+--------------------------
+
+Fixes:
+    * Fix memory leak when using OpenSSL for ciphering long data.
+
 Eet 1.7.3
 
 Changes since Eet 1.7.2:

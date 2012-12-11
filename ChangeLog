@@ -648,3 +648,6 @@
 
 	* 1.7.3 release
 
+2012-12-11  Cedric Bail
+
+	* Fix leak eet_pbkdf2_sha1 with OpenSSL.

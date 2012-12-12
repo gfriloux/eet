@@ -651,3 +651,7 @@
 2012-12-11  Cedric Bail
 
 	* Fix leak eet_pbkdf2_sha1 with OpenSSL.
+
+2012-12-12  Daniel Willmann
+
+	* Fix possible buffer overflow in functions relying on EET_T_LAST.

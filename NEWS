@@ -5,6 +5,7 @@ Changes since Eet 1.7.3:
 
 Fixes:
     * Fix memory leak when using OpenSSL for ciphering long data.
+    * Fix possible buffer overflow in functions relying on EET_T_LAST
 
 Eet 1.7.3
 

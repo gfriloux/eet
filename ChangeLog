@@ -655,3 +655,8 @@
 2012-12-12  Daniel Willmann
 
 	* Fix possible buffer overflow in functions relying on EET_T_LAST.
+
+2012-12-17 Vincent Torri
+
+	* Add XML output to doc
+	* Add installation rule for doc

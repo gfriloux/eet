@@ -528,6 +528,7 @@ echo
 echo "  Documentation........: ${build_doc}"
 if test "x${build_doc}" = "xyes" ; then
    echo "    Building...........: make doc"
+   echo "    Installation.......: make install-doc"
 fi
 echo "  Examples.............: ${build_examples}"
 echo "  Examples installed...: ${install_examples}"

@@ -43,13 +43,17 @@ m4/efl_path_max.m4
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = eet.pc
 
-.PHONY: doc
+.PHONY: doc install-doc
 
 # Documentation
 
 doc:
 	@echo "entering doc/"
 	$(MAKE) -C doc doc
+
+install-doc:
+	@echo "entering doc/"
+	make -C doc install-doc
 
 # Unit tests
 

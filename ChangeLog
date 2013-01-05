@@ -669,3 +669,6 @@
 
 	* 1.7.5 release
 
+2013-01-05  Joel Klinghed
+
+        * eet gcrypt cflags build fix.

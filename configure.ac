@@ -68,6 +68,7 @@ AC_CANONICAL_HOST
 ### Default options with respect to host
 
 requirements_pc_eet=""
+requirements_cflags_eet=""
 requirements_libs_eet=""
 
 ### Additional options to configure
@@ -269,6 +270,7 @@ fi
 if test "x${have_gnutls}" = "xyes" ; then
    AC_PATH_GENERIC([libgcrypt], [], [have_gnutls="yes"], [have_gnutls="no"])
    if test "x${have_gnutls}" = "xyes" ; then
+      requirements_cflags_eet="${LIBGCRYPT_CFLAGS} ${requirements_cflags_eet}"
       requirements_libs_eet="${LIBGCRYPT_LIBS} ${requirements_libs_eet}"
    fi
 fi
@@ -405,6 +407,7 @@ case "$host_os" in
       ;;
 esac
 
+EET_CFLAGS="${EET_CFLAGS} ${requirements_cflags_eet}"
 EET_LIBS="${EET_LIBS} ${requirements_libs_eet}"
 
 

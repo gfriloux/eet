@@ -26,11 +26,8 @@ AC_LINK_IFELSE(
 #endif
        ]],
        [[
-int main(void)
-{
   DIR *dirp;
   return dirfd(dirp);
-}
        ]])
    ],
    [_efl_have_fct="yes"],

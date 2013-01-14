@@ -1,3 +1,10 @@
+Eet 1.7.6
+
+Changes since Eet 1.7.5:
+--------------------------
+
+    * Fix endianess issue in Eet_Image.
+
 Eet 1.7.5
 
 Changes since Eet 1.7.4:

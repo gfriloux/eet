@@ -672,3 +672,7 @@
 2013-01-05  Joel Klinghed
 
         * eet gcrypt cflags build fix.
+
+2013-01-14  Albin Tonnerre
+
+	* Fix endianness issue in Eet_Image.

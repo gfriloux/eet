@@ -676,3 +676,8 @@
 2013-01-14  Albin Tonnerre
 
 	* Fix endianness issue in Eet_Image.
+
+2013-01-20  Aharon Hillel
+
+        * eet_connection.c Change alloca() to malloc() to support
+          big-mem-alloc.

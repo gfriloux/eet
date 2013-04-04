@@ -681,3 +681,7 @@
 
         * eet_connection.c Change alloca() to malloc() to support
           big-mem-alloc.
+
+2013-04-04  Rafael Antognolli
+
+        * 1.7.6 release

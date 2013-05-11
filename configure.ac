@@ -2,7 +2,7 @@
 ##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##
 m4_define([v_maj], [1])
 m4_define([v_min], [7])
-m4_define([v_mic], [6])
+m4_define([v_mic], [7])
 m4_define([v_rev], m4_esyscmd([(git rev-list --count HEAD 2>/dev/null || echo 0) | tr -d '\n']))dnl
 ##--   When released, remove the dnl on the below line
 m4_undefine([v_rev])
@@ -254,12 +254,12 @@ AC_MSG_RESULT([${want_gnutls}])
 
 have_gnutls="no"
 if test "x${want_gnutls}" = "xyes" || test "x${want_gnutls}" = "xauto" ; then
-   PKG_CHECK_MODULES([GNUTLS], [gnutls >= 1.7.6],
+   PKG_CHECK_MODULES([GNUTLS], [gnutls >= 1.7.7],
       [
        have_gnutls="yes"
        want_openssl="no"
        AC_DEFINE([HAVE_GNUTLS], [1], [Have Gnutls support])
-       requirements_pc_eet="gnutls >= 1.7.6 ${requirements_pc_eet}"
+       requirements_pc_eet="gnutls >= 1.7.7 ${requirements_pc_eet}"
       ],
       [have_gnutls="no"])
 fi

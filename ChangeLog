@@ -685,3 +685,7 @@
 2013-04-04  Rafael Antognolli
 
         * 1.7.6 release
+
+2013-06-011  Stefan Schmidt
+
+        * Fix memory leak in eet_image

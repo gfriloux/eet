@@ -767,7 +767,11 @@ eet_data_image_lossless_compressed_convert(int         *size,
         }
 
       comp = malloc(buflen);
-      if (!comp) return NULL;
+      if (!comp)
+        {
+         free(bigend_data);
+         return NULL;
+        }
 
       switch (compression)
         {
@@ -792,6 +796,7 @@ eet_data_image_lossless_compressed_convert(int         *size,
       if ((!ok) || (buflen > (w * h * 4)))
         {
            free(comp);
+           free(bigend_data);
            *size = -1;
            return NULL;
         }
@@ -800,6 +805,7 @@ eet_data_image_lossless_compressed_convert(int         *size,
       if (!d)
         {
            free(comp);
+           free(bigend_data);
            return NULL;
         }
 

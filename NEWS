@@ -1,3 +1,9 @@
+Changes since Eet 1.7.7:
+--------------------------
+
+Fixes:
+    * Fix memory leak in eet_image.
+
 Eet 1.7.7
 
 Changes since Eet 1.7.6:

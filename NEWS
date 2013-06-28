@@ -3,6 +3,7 @@ Changes since Eet 1.7.7:
 
 Fixes:
     * Fix memory leak in eet_image.
+    * With segfault with edje_cc in some cases
 
 Eet 1.7.7
 

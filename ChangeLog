@@ -686,6 +686,10 @@
 
         * 1.7.6 release
 
-2013-06-011  Stefan Schmidt
+2013-06-11  Stefan Schmidt
 
         * Fix memory leak in eet_image
+
+2013-06-28  Stefan Schmidt
+
+        * Fix segfault in edje_cc in some case when using eet

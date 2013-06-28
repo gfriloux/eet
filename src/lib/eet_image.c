@@ -746,7 +746,7 @@ eet_data_image_lossless_compressed_convert(int         *size,
 
    {
       unsigned char *d, *comp;
-      int *header, *bigend_data, ret, ok = 1;
+      int *header, *bigend_data = NULL, ret, ok = 1;
       uLongf buflen = 0;
 
       buflen = (((w * h * 101) / 100) + 3) * 4;

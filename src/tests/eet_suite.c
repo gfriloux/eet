@@ -1950,6 +1950,7 @@ START_TEST(eet_cache_concurrency)
    fail_if(ret != 0);
 # endif /* ifdef _EET_INCLUDED_PTHREAD */
 
+   fail_if(eet_close(ef) != EET_ERROR_NONE);
    fail_if(unlink(file) != 0);
 
    eina_threads_shutdown();

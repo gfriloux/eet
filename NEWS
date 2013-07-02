@@ -1,9 +1,12 @@
+Eet 1.7.8
+
 Changes since Eet 1.7.7:
 --------------------------
 
 Fixes:
     * Fix memory leak in eet_image.
     * With segfault with edje_cc in some cases
+    * Fix eet_cache_concurrency test
 
 Eet 1.7.7
 
@@ -11,7 +14,6 @@ Changes since Eet 1.7.6:
 --------------------------
 
     * No changes, increasing version to keep in sync with latest release.
-
 
 Changes since Eet 1.7.5:
 --------------------------

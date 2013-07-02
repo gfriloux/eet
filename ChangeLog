@@ -693,3 +693,7 @@
 2013-06-28  Stefan Schmidt
 
         * Fix segfault in edje_cc in some case when using eet
+
+2013-07-02  Pino Toscano
+
+	* Fix eet_cache_concurrency test

@@ -1924,6 +1924,7 @@ START_TEST(eet_cache_concurrency)
    ef = eet_open(file, EET_FILE_MODE_WRITE);
    fail_if(!ef);
    fail_if(!eet_write(ef, "keys/tests", buffer, strlen(buffer) + 1, 0));
+   fail_if(eet_sync(ef) != EET_ERROR_NONE);
 
    /* start a thread that repeatedly opens and closes a file */
    open_worker_stop = 0;

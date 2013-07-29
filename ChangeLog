@@ -686,6 +686,10 @@
 
         * 1.7.6 release
 
+2013-05-11  Rafael Antognolli
+
+        * 1.7.7 release
+
 2013-06-11  Stefan Schmidt
 
         * Fix memory leak in eet_image
@@ -697,3 +701,7 @@
 2013-07-02  Pino Toscano
 
 	* Fix eet_cache_concurrency test
+
+2013-08-02  Eduardo Lima (Etrunko)
+
+        * 1.7.8 release

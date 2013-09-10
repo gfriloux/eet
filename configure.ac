@@ -2,7 +2,7 @@
 ##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##
 m4_define([v_maj], [1])
 m4_define([v_min], [7])
-m4_define([v_mic], [8])
+m4_define([v_mic], [9])
 m4_define([v_rev], m4_esyscmd([(git rev-list --count HEAD 2>/dev/null || echo 0) | tr -d '\n']))dnl
 ##--   When released, remove the dnl on the below line
 m4_undefine([v_rev])
@@ -394,7 +394,7 @@ EFL_CHECK_LIBS([eet], [libjpeg zlib])
 
 # Eina library
 
-requirements_pc_eet="eina >= 1.7.8 ${requirements_pc_eet}"
+requirements_pc_eet="eina >= 1.7.9 ${requirements_pc_eet}"
 PKG_CHECK_MODULES([EET], [${requirements_pc_eet}])
 
 case "$host_os" in

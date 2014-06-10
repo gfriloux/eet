@@ -118,15 +118,12 @@ struct _Eet_File_Node
    Eet_File_Node    *next; /* FIXME: make buckets linked lists */
 
    unsigned long int offset;
-   unsigned long int dictionary_offset;
-   unsigned long int name_offset;
-
    unsigned int      name_size;
    unsigned int      size;
    unsigned int      data_size;
 
    unsigned char     compression_type;
-   
+
    unsigned char     free_name : 1;
    unsigned char     compression : 1;
    unsigned char     ciphered : 1;
@@ -219,10 +216,10 @@ extern int _eet_log_dom_global;
 # undef WRN
 #endif /* ifdef WRN */
 #define WRN(...)  EINA_LOG_DOM_WARN(_eet_log_dom_global, __VA_ARGS__)
-#ifdef CRIT
-# undef CRIT
-#endif /* ifdef CRIT */
-#define CRIT(...) EINA_LOG_DOM_CRIT(_eet_log_dom_global, __VA_ARGS__)
+#ifdef CRI
+# undef CRI
+#endif /* ifdef CRI */
+#define CRI(...) EINA_LOG_DOM_CRIT(_eet_log_dom_global, __VA_ARGS__)
 
 Eet_Dictionary *
  eet_dictionary_add(void);

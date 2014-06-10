@@ -256,7 +256,7 @@ eet_cache_add(Eet_File   *ef,
         new_cache = realloc(new_cache, new_cache_alloc * sizeof(Eet_File *));
         if (!new_cache)
           {
-             CRIT("BAD ERROR! Eet realloc of cache list failed. Abort");
+             CRI("BAD ERROR! Eet realloc of cache list failed. Abort");
              abort();
           }
      }
@@ -306,7 +306,7 @@ eet_cache_del(Eet_File   *ef,
              new_cache = realloc(new_cache, new_cache_alloc * sizeof(Eet_File *));
              if (!new_cache)
                {
-                  CRIT("BAD ERROR! Eet realloc of cache list failed. Abort");
+                  CRI("BAD ERROR! Eet realloc of cache list failed. Abort");
                   abort();
                }
           }
@@ -406,27 +406,6 @@ eet_flush2(Eet_File *ef)
    bytes_dictionary_entries = EET_FILE2_DICTIONARY_ENTRY_SIZE *
      num_dictionary_entries;
 
-   /* calculate per entry offset */
-   strings_offset = bytes_directory_entries + bytes_dictionary_entries;
-   data_offset = bytes_directory_entries + bytes_dictionary_entries +
-     bytes_strings;
-
-   for (i = 0; i < num; ++i)
-     {
-        for (efn = ef->header->directory->nodes[i]; efn; efn = efn->next)
-          {
-             efn->offset = data_offset;
-             data_offset += efn->size;
-
-             efn->name_offset = strings_offset;
-             strings_offset += efn->name_size;
-          }
-     }
-
-   /* calculate dictionary strings offset */
-   if (ef->ed)
-     ef->ed->offset = strings_offset;
-
    /* go thru and write the header */
    head[0] = (int)htonl((unsigned int)EET_MAGIC_FILE2);
    head[1] = (int)htonl((unsigned int)num_directory_entries);
@@ -435,6 +414,11 @@ eet_flush2(Eet_File *ef)
    fseek(fp, 0, SEEK_SET);
    if (fwrite(head, sizeof (head), 1, fp) != 1)
      goto write_error;
+
+   /* calculate per entry base offset */
+   strings_offset = bytes_directory_entries + bytes_dictionary_entries;
+   data_offset = bytes_directory_entries + bytes_dictionary_entries +
+     bytes_strings;
 
    /* write directories entry */
    for (i = 0; i < num; i++)
@@ -447,12 +431,17 @@ eet_flush2(Eet_File *ef)
              flag = (efn->alias << 2) | (efn->ciphered << 1) | efn->compression;
              flag |= efn->compression_type << 3;
 
-             ibuf[0] = (int)htonl((unsigned int)efn->offset);
+             efn->offset = data_offset;
+
+             ibuf[0] = (int)htonl((unsigned int)data_offset);
              ibuf[1] = (int)htonl((unsigned int)efn->size);
              ibuf[2] = (int)htonl((unsigned int)efn->data_size);
-             ibuf[3] = (int)htonl((unsigned int)efn->name_offset);
+             ibuf[3] = (int)htonl((unsigned int)strings_offset);
              ibuf[4] = (int)htonl((unsigned int)efn->name_size);
              ibuf[5] = (int)htonl((unsigned int)flag);
+
+             strings_offset += efn->name_size;
+             data_offset += efn->size;
 
              if (fwrite(ibuf, sizeof(ibuf), 1, fp) != 1)
                goto write_error;
@@ -463,6 +452,9 @@ eet_flush2(Eet_File *ef)
    if (ef->ed)
      {
         int offset = strings_offset;
+
+        /* calculate dictionary strings offset */
+        ef->ed->offset = strings_offset;
 
         for (j = 0; j < ef->ed->count; ++j)
           {

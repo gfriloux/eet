@@ -2,7 +2,7 @@
 
 _pkgname=eet
 pkgname=('eet' 'eet_doc')
-pkgver=1.7.10
+pkgver=1.7.11
 pkgrel=1
 
 pkgdesc="Enlightenment Foundation Libraries - Eet"

@@ -61,6 +61,7 @@ rm -rf "$RPM_BUILD_ROOT"
 %files
 %defattr(-,root,root)
 %{_libdir}/lib*.so.*
+%{_bindir}/*
 
 %files devel
 %defattr(-, root, root)
@@ -69,3 +70,4 @@ rm -rf "$RPM_BUILD_ROOT"
 %{_libdir}/*.so
 %{_libdir}/*.la
 %{_libdir}/*.a
+%{_bindir}/*

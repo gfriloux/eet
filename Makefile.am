@@ -22,15 +22,14 @@ m4/libtool.m4 \
 m4/lt~obsolete.m4 \
 m4/ltoptions.m4 \
 m4/ltsugar.m4 \
-m4/ltversion.m4
+m4/ltversion.m4 \
+rpm/$(PACKAGE).spec
 
 EXTRA_DIST = \
 AUTHORS \
 COPYING \
 autogen.sh \
-eet.pc.in \
-eet.spec.in \
-eet.spec \
+$(PACKAGE).pc.in \
 m4/ac_attribute.m4 \
 m4/ac_path_generic.m4 \
 m4/efl_binary.m4 \
@@ -38,7 +37,8 @@ m4/efl_check_funcs.m4 \
 m4/efl_check_libs.m4 \
 m4/efl_doxygen.m4 \
 m4/efl_tests.m4 \
-m4/efl_path_max.m4
+m4/efl_path_max.m4 \
+rpm/$(PACKAGE).spec.in
 
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = eet.pc

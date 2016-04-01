@@ -494,12 +494,12 @@ eet.pc
 doc/Makefile
 doc/Doxyfile
 doc/eet.dox
+rpm/${PACKAGE_NAME}.spec
 src/Makefile
 src/lib/Makefile
 src/bin/Makefile
 src/tests/Makefile
 src/examples/Makefile
-eet.spec
 ])
 
 

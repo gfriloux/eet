@@ -9,7 +9,7 @@ pkgdesc="Enlightenment Foundation Libraries - Eet"
 arch=('i686' 'x86_64')
 url="https://github.com/gfriloux/eet"
 license=('BSD')
-depends=('')
+depends=('libjpeg-turbo')
 options=('debug')
 
 build()

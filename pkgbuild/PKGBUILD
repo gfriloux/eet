@@ -19,7 +19,7 @@ build()
   export CXXFLAGS="$CXXFLAGS -fvisibility=hidden -fomit-frame-pointer"
   [[ -e Makefile ]] && make clean distclean
   [[ -e autogen.sh ]] && _configure=autogen.sh || _configure=configure
-  ./$_configure --prefix=/usr
+  ./$_configure --prefix=/usr --disable-gnutls
   make
   make doc
 }
